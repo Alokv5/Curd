@@ -1,0 +1,53 @@
+<html>
+<head>
+        <style>
+            .menu{
+    background-color: antiquewhite;
+    color: brown;font-family: "Angsana New"; font-size: 30px;
+
+}
+#head{
+            text-shadow: darkred 5px 5px ; background-color:
+                azure;font-family:Impact; color: cornflowerblue;
+            font-size: 70px;
+        }
+#copyright
+{
+    font-family: "Arial Black";
+    font-size: 15px;
+    font-style: italic;
+    background-color: #ffcf0a;
+    color: brown;
+}
+
+
+
+        </style>
+    </head>
+<body>
+<table align="center" border="2">
+    <tr>
+        <th id="head" colspan="3"> Employee Registration</th>
+        <tr>
+    <th class="menu" width="100">
+        <a href="{% url 'main' %}"> Home</a></th>
+    <th class="menu" width="100">
+        <a href="{% url 'addEmp' %}">Add New Employee</a></th>
+    <th class="menu" width="100">
+        <a href="{% url 'allEmp' %}">Show All Employee</a></th>
+
+    </tr>
+        <tr>
+    <th colspan="3">
+        {% block alok %}
+
+        {% endblock %}
+    </th>
+    </tr>
+    <tr>
+        <th colspan="3" id="copyright"> copyright@alokverma's</th>
+    </tr>
+
+</table>
+</body>
+</html>
