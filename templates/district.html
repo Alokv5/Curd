@@ -1,0 +1,30 @@
+{% extends 'common.html' %}
+
+{% block covid %}
+
+    <table align="center" border="2">
+    <TR><TH><h1 style="padding: 10px;text-align: center;">{{ state_codes }}</h1></TH>
+        <th>TESTED</th>
+        <th>Confirmed</th>
+        <th>deceased</th>
+        <th>Recovered</th>
+        <th>population</th>
+        <th>last_updated</th>
+        <th>source</th>
+
+    </TR>
+    {% for x,y in data.districts.items %}
+     <TR><TH>{{ x }}</TH>
+         <th>{{ y.total.tested }}</th>
+         <th>{{ y.total.confirmed }}</th>
+         <th>{{ y.total.deceased }}</th>
+         <th>{{ y.total.recovered }}</th>
+         <th>{{ y.meta.population }}</th>
+         <th>{{ y.meta.tested.last_updated }}</th>
+         <th><a href="{{ y.meta.tested.source}}">Source</a></th>
+     </TR>
+
+
+    {% endfor %}
+   </table>
+{% endblock %}
